@@ -183,6 +183,8 @@ canvas.addEventListener('mousedown', () => {
 canvas.addEventListener('mouseup', () => { if(isPressing && !isPaused) { player.jump(); isPressing = false; }});
 
 function init() {
+    bgMusic.load();
+    deathSound.load();
     platform.y = canvas.height - 250;
     platform.x = 0;
     player = new Monkey();
@@ -199,6 +201,15 @@ function init() {
     document.getElementById('distance').innerText = distance;
     updateLoop();
 }
+
+canvas.addEventListener('mousedown', () => {
+    if(!isGameOver && !isPaused) {
+        if(bgMusic.paused) {
+            bgMusic.volume = 1.0;
+            bgMusic.play().catch(e => console.log("Permiso de audio denegado por el navegador"));
+        }
+        if((player.isSwinging || player.isOnGround)) isPressing = true;
+    }
 
 function updateLoop() {
     if (isGameOver) return;
