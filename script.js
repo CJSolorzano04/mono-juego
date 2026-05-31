@@ -92,7 +92,7 @@ class Monkey {
 
     update() {
         if (this.isSwinging && this.currentVine) {
-            this.x = this.currentVine.x + (this.currentVine.width / 2) - (this.width / 2) - 45;
+            this.x = this.currentVine.x + (this.currentVine.width / 2) - (this.width / 2) - 50;
             
             let maxBottom = this.currentVine.y + this.currentVine.totalHeight - 110;
             if (this.y > maxBottom) this.y = maxBottom;
