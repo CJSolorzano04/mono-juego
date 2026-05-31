@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mono Jump</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="hud">
+            <p>Metros: <span id="distance">0</span>m</p>
+            <p>Monedas: <span id="coins">0</span></p>
+        </div>
+
+        <button id="pause-btn">||</button>
+
+        <div id="custom-alert" class="hidden">
+            <button id="close-alert-x">X</button>
+            <p id="alert-text">Mensaje</p>
+            <button id="close-alert-ok">OK</button>
+        </div>
+
+        <div id="pause-screen" class="hidden">
+            <h1>PAUSA</h1>
+            <p>Presiona ESC o || para continuar</p>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <h1>Fin del Juego</h1>
+            <p>Recorriste: <span id="final-distance">0</span>m</p>
+            <p>Recolectaste: <span id="final-coins">0</span> monedas</p>
+            <div id="shop">
+                <h3>Tienda de Mejoras</h3>
+                <button id="buy-jump">Mejorar Salto (Costo: 10)</button>
+            </div>
+            <button id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <audio id="bg-music" src="assets/intro-music.mp3" loop></audio>
+    <audio id="death-sound" src="assets/rip-mono.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
